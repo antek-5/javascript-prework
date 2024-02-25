@@ -1,11 +1,11 @@
-
+{
 
 function playGame(playerInput)
 {
     clearMessages();
 
     // FUNKCJE WEWNĘTRZNE
-    function getMoveName(argMoveId)
+    const getMoveName = function(argMoveId)
     {
         if(argMoveId == 1)
         {
@@ -26,7 +26,7 @@ function playGame(playerInput)
         }
     }
 
-    function displayResult(argComputerMove, argPlayerMove)
+    const displayResult = function(argComputerMove, argPlayerMove)
     {
         if(argComputerMove == argPlayerMove)
         {
@@ -70,11 +70,11 @@ function playGame(playerInput)
     //
 
     // RUCH KOMPUTERA
-    let randomNumber = Math.floor(Math.random() * 3 + 1);
-    let computerMove = getMoveName(randomNumber);
+    const randomNumber = Math.floor(Math.random() * 3 + 1);
+    const computerMove = getMoveName(randomNumber);
 
     // RUCH GRACZA
-    let playerMove = getMoveName(playerInput);
+    const playerMove = getMoveName(playerInput);
 
     // WYNIK
     displayResult(computerMove, playerMove);
@@ -103,3 +103,6 @@ document.getElementById('play-scissors').addEventListener('click',
         playGame(3);
     }
 );
+
+
+}
